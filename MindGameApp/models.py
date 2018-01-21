@@ -30,7 +30,7 @@ class MyUserManager(BaseUserManager):
 
 
 class AppUser(AbstractBaseUser, PermissionsMixin):
-	# fb_id = models.CharField(max_length=200, null=True, blank=True)
+	fb_id = models.CharField(max_length=200, null=True, blank=True)
 	first_name = models.CharField(max_length=20)
 	last_name = models.CharField(max_length=20)
 	email = models.EmailField(verbose_name='email address',max_length=255,unique=True)
