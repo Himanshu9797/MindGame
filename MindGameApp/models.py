@@ -1,5 +1,5 @@
 from django.db import models
-from django.contrib.auth.models import BaseUserManager, AbstractBaseUser
+from django.contrib.auth.models import BaseUserManager, AbstractBaseUser, PermissionsMixin
 
 # Create your models here.
 
@@ -29,7 +29,7 @@ class MyUserManager(BaseUserManager):
         return user
 
 
-class AppUser(AbstractBaseUser):
+class AppUser(AbstractBaseUser, PermissionsMixin):
 	fb_id = models.CharField(max_length=200)
 	first_name = models.CharField(max_length=20)
 	last_name = models.CharField(max_length=20)
